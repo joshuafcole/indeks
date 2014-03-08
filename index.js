@@ -54,7 +54,7 @@ indeks.index = function(dir, opts) {
   if(!isArray(opts.ignore)) {
     opts.ignore = [opts.ignore];
   }
-  opts.loader = opts.loader || indeks.load;
+  opts.loader = opts.loader || require;
 
   var imports = {};
 
