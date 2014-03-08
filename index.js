@@ -54,7 +54,7 @@ indeks.index = function(dir, opts) {
   if(!isArray(opts.ext)) {
     opts.ext = [opts.ext];
   }
-  opts.ignore = (opts.ignore !== undefined) opts.ignore : 'index.js';
+  opts.ignore = (opts.ignore !== undefined) ? opts.ignore : 'index.js';
   if(!opts.ignore) {
       opts.ignore = [];
   }
