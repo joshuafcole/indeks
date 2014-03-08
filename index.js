@@ -32,18 +32,11 @@ indeks.getVarName = function(file) {
 };
 
 /**
- * Requires the given file from the perspective of the given folder.
- */
-indeks.load = function(dir, file) {
-  return require(path.join(dir, file));
-};
-
-/**
  * Given a directory, import all files within it.
  * opts: {
  * ext?:String|Array = '.js'
  * ignore?:String|Array, = 'index.js'
- * loader?:Function = indeks.load
+ * loader?:Function = require
  * }
  */
 indeks.index = function(dir, opts) {
@@ -89,7 +82,7 @@ indeks.index = function(dir, opts) {
     }
 
     var name = indeks.getVarName(file);
-    imports[name] = opts.loader(dir, file);
+    imports[name] = opts.loader(path.join(dir, file));
   });
 
   return imports;
