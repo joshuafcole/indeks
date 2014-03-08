@@ -63,7 +63,6 @@ indeks.index = function(dir, opts) {
   var imports = {};
 
   fs.readdirSync(dir).forEach(function(file) {
-    console.log('f', file);
     // Bail if file is not of a whitelisted extension.
     var validExt = opts.ext.reduce(function(memo, ext) {
       if(file.indexOf(ext, file.length - ext.length) !== -1) {
